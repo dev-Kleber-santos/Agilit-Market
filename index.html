@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header>
@@ -25,37 +27,69 @@
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="container hero-content">
+<section id="inicio" class="hero">
+    <div class="container hero-layout">
+        <div class="hero-text">
+            <h1>Soluções Inteligentes de <br><span>Varejo Autônomo</span></h1>
+            <p>Levamos a conveniência de um mercado completo para dentro do seu condomínio ou empresa com tecnologia de ponta.</p>
+            <div class="hero-actions">
+                <a href="#contato" class="btn-principal">Quero no meu condomínio</a>
             </div>
-    </section>
+        </div>
+        <div class="hero-image-space"></div>
+    </div>
+</section>
 
     <section class="container cards-sobrepostos-wrapper">
         <div class="cards-grid">
-            <div class="card">
-                <div class="icon">🚀</div>
-                <h3>AGILIDADE</h3>
-                <p>Nossos sistemas são projetados para máxima rapidez, desde a implantação até o checkout final.</p>
+            <div class="card-compacto">
+                <div class="icon-svg-small">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <h3>Conveniência 24h</h3>
+                <p>Acesso ininterrupto a produtos essenciais no seu condomínio.</p>
             </div>
-            <div class="card">
-                <div class="icon">🛡️</div>
-                <h3>SEGURANÇA</h3>
-                <p>Tecnologia avançada para garantir transações seguras e total controle do inventário.</p>
+
+            <div class="card-compacto">
+                <div class="icon-svg-small">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3>Operação Segura</h3>
+                <p>Monitoramento avançado e checkout 100% automatizado.</p>
             </div>
-            <div class="card">
-                <div class="icon">📊</div>
-                <h3>EFICIÊNCIA</h3>
-                <p>Otimize espaços e recursos com soluções personalizadas para cada ambiente.</p>
+
+            <div class="card-compacto">
+                <div class="icon-svg-small">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v18h18"></path>
+                        <path d="M18 17V9"></path>
+                        <path d="M13 17V5"></path>
+                        <path d="M8 17v-3"></path>
+                    </svg>
+                </div>
+                <h3>Custo Zero</h3>
+                <p>Implantação sem taxas extras para a administração.</p>
             </div>
         </div>
     </section>
-
     <section id="sobre" class="section sobre">
         <div class="container sobre-wrapper">
             <h2>Nossa História</h2>
             <div class="sobre-conteudo">
-                <p>A Agility Market nasceu de um grupo de engenheiros e varejistas que viram a necessidade de otimizar os processos de varejo em microescala. Nossa missão é trazer a conveniência de um mercado autônomo completo para dentro de condomínios residenciais e empresas.</p>
-                <p>Acreditamos que a tecnologia deve servir para agilizar a vida das pessoas, oferecendo produtos de qualidade a qualquer hora, com total segurança e praticidade. Estamos constantemente inovando para garantir que nossa solução seja a mais ágil e confiável do mercado.</p>
+                <p>A Agility Market nasceu de um grupo de engenheiros e varejistas que viram a necessidade de otimizar
+                    os processos de varejo em microescala. Nossa missão é trazer a conveniência de um mercado autônomo
+                    completo para dentro de condomínios residenciais e empresas.</p>
+                <p>Acreditamos que a tecnologia deve servir para agilizar a vida das pessoas, oferecendo produtos de
+                    qualidade a qualquer hora, com total segurança e praticidade. Estamos constantemente inovando para
+                    garantir que nossa solução seja a mais ágil e confiável do mercado.</p>
             </div>
         </div>
     </section>
@@ -64,31 +98,132 @@
         <div class="container">
             <h2>Nossos Modelos de Mercado</h2>
             <div class="servicos-grade">
-                <div class="modelo-card">
+                <div class="modelo-card" onclick="alterarModelo('slim', this)" style="cursor: pointer;">
                     <h3>Modelo SLIM</h3>
                     <div class="modelo-info">
                         <p><strong>Quiosque Compacto</strong></p>
-                        <p>Focado em café, snacks e produtos essenciais. Ideal para recepções e lounges.</p>
+                        <p>Focado em café e snacks. Ideal para recepções e lounges.</p>
                     </div>
                 </div>
-                <div class="modelo-card">
-                    <h3>Modelo MEDIUM</h3>
+
+                <div class="modelo-card" onclick="alterarModelo('middle', this)" style="cursor: pointer;">
+                    <h3>Modelo MIDDLE</h3>
                     <div class="modelo-info">
-                        <p><strong>Micro-mercado de Geladeiras</strong></p>
-                        <p>Geladeiras autônomas e prateleiras para maior variedade. Perfeito para áreas de lazer.</p>
+                        <p><strong>Micro-mercado de Contêiner</strong></p>
+                        <p>Design modular e robusto, perfeito para áreas externas e parques.</p>
                     </div>
                 </div>
-                <div class="modelo-card">
+
+                <div class="modelo-card ativo" onclick="alterarModelo('full', this)" style="cursor: pointer;">
                     <h3>Modelo FULL</h3>
                     <div class="modelo-info">
                         <p><strong>Mercado Autônomo Completo</strong></p>
-                        <p>O mercado completo com checkout automatizado e grande variedade. O que você vê na imagem abaixo.</p>
+                        <p>Variedade premium com checkout automatizado e corredor completo.</p>
                     </div>
                 </div>
             </div>
-            <div class="servicos-exemplo">
-                <h3>Exemplo de Modelo FULL em Condomínio</h3>
-                <img src="assets/market.png" alt="Exemplo de Mercado Autônomo Agilit Market" class="img-servico">
+
+            <div class="detalhe-modelo-wrapper" id="exibicao-modelo">
+                <div class="detalhe-imagem">
+                    <img id="imagem-modelo" src="assets/bannerefull.png" alt="Modelo de Mercado">
+                </div>
+                <div class="detalhe-texto">
+                    <h3 id="titulo-modelo">Modelo FULL</h3>
+                    <div id="descricao-modelo" class="descricao-box">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="unidades" class="section unidades">
+        <div class="container">
+            <h2>Onde Estamos</h2>
+            <p class="subtitulo-unidades">Já estamos presentes em pontos estratégicos, levando agilidade para diversos
+                condomínios.</p>
+
+            <div class="unidades-wrapper">
+                <div class="unidades-lista">
+                    <div class="unidade-item unidade-ativa"
+                        onclick="alterarMapa('https://maps.google.com/maps?q=Moema,Sao%20Paulo&output=embed', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Moema</h4>
+                            <p>São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <div class="unidade-item"
+                        onclick="alterarMapa('https://maps.google.com/maps?q=Chacara%20Klabin,Sao%20Paulo&output=embed', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Chácara Klabin</h4>
+                            <p>São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <div class="unidade-item destaque-unidade"
+                        onclick="alterarMapa('https://maps.google.com/maps?q=Cantareira,Sao%20Paulo&output=embed', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Cantareira (2 Unidades)</h4>
+                            <p>Operações frente a frente</p>
+                        </div>
+                    </div>
+                    <div class="unidade-item"
+                        onclick="alterarMapa('https://maps.google.com/maps?q=Vila%20Mariana,Sao%20Paulo&output=embed', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Vila Mariana</h4>
+                            <p>São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <div class="unidade-item"
+                        onclick="alterarMapa('https://maps.google.com/maps?q=Congonhas,Sao%20Paulo&output=embed', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Congonhas</h4>
+                            <p>São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <div class="unidade-item"
+                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d941330.6326102148!2d-49.20509159860329!3d-22.836796564576847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c7260edd4e582b%3A0x798fe74168f8d19b!2sBotucatu%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1776308746436!5m2!1spt-BR!2sbr', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Botucatu</h4>
+                            <p>Interior - SP</p>
+                        </div>
+                    </div>
+                    <div class="unidade-item"
+                        onclick="alterarMapa('https://maps.google.com/maps?q=Vila%20Matilde,Sao%20Paulo&output=embed', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Vila Matilde</h4>
+                            <p>Zona Leste - SP</p>
+                        </div>
+                    </div>
+                    <div class="unidade-item"
+                        onclick="alterarMapa('https://maps.google.com/maps?q=Chora%20Menino,Sao%20Paulo&output=embed', this)"
+                        style="cursor: pointer;">
+                        <span class="pin">📍</span>
+                        <div>
+                            <h4>Chora Menino</h4>
+                            <p>Zona Norte - SP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unidades-mapa">
+                    <iframe id="mapa-iframe" src="https://maps.google.com/maps?q=Moema,Sao%20Paulo&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -98,7 +233,7 @@
             <div class="contato-info">
                 <h2>Fale Conosco</h2>
                 <p>Nossa equipe está pronta para tirar suas dúvidas e encontrar a melhor solução para você.</p>
-                
+
                 <div class="representantes">
                     <h3>Nossos Representantes</h3>
                     <div class="representante">
@@ -112,14 +247,14 @@
                         <p>(11) 91234-5678</p>
                     </div>
                 </div>
-                
+
                 <div class="contato-principal">
                     <h3>Contato Geral</h3>
                     <p>Telefone: (11) 3000-0000</p>
                     <p>E-mail: contato@agility.com</p>
                 </div>
             </div>
-            
+
             <div class="contato-formulario">
                 <form action="#">
                     <div class="form-group">
@@ -164,5 +299,7 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
+
 </html>
