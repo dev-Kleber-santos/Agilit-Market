@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agilit Market | Soluções Inteligentes de Varejo Autônomo</title>
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -13,11 +14,18 @@
 
     <header>
         <nav class="container">
-            <div class="logo">
+            <a href="#inicio" class="logo" style="text-decoration: none;">
                 <img src="assets/logo_transparent.png" alt="Logotipo Agilit Market">
                 <span class="logo-text">AGILIT <strong>MARKET</strong></span>
+            </a>
+
+            <div class="menu-hamburguer" id="menu-hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <ul>
+
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
@@ -54,7 +62,6 @@
                 <h3>Conveniência 24h</h3>
                 <p>Acesso ininterrupto a produtos essenciais no seu condomínio.</p>
             </div>
-
             <div class="card-compacto">
                 <div class="icon-svg-small">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -65,7 +72,6 @@
                 <h3>Operação Segura</h3>
                 <p>Monitoramento avançado e checkout 100% automatizado.</p>
             </div>
-
             <div class="card-compacto">
                 <div class="icon-svg-small">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -86,8 +92,8 @@
         <div class="container sobre-wrapper">
             <h2>Nossa História</h2>
             <div class="sobre-conteudo">
-                <p>A Agilit Market nasceu de um grupo de engenheiros e varejistas que viram a necessidade de otimizar
-                    os processos de varejo em microescala. Nossa missão é trazer a conveniência de um mercado autônomo
+                <p>A Agilit Market nasceu de um grupo de engenheiros e varejistas que viram a necessidade de otimizar os
+                    processos de varejo em microescala. Nossa missão é trazer a conveniência de um mercado autônomo
                     completo para dentro de condomínios residenciais e empresas.</p>
                 <p>Acreditamos que a tecnologia deve servir para agilizar a vida das pessoas, oferecendo produtos de
                     qualidade a qualquer hora, com total segurança e praticidade. Estamos constantemente inovando para
@@ -98,40 +104,39 @@
 
     <section id="servicos" class="section servicos">
         <div class="container">
-            <h2>Nossos Modelos de Mercado</h2>
-            <div class="servicos-grade">
-                <div class="modelo-card" onclick="alterarModelo('slim', this)">
-                    <h3>Modelo SLIM</h3>
-                    <div class="modelo-info">
-                        <p><strong>Quiosque Compacto</strong></p>
-                        <p>Focado em café e snacks. Ideal para recepções e lounges.</p>
+            <h2 class="titulo-mobile-accordion" onclick="toggleAccordion('conteudo-servicos', this)">Nossos Modelos de
+                Mercado</h2>
+            <div id="conteudo-servicos" class="conteudo-accordion">
+                <div class="servicos-grade">
+                    <div class="modelo-card" onclick="alterarModelo('slim', this)">
+                        <h3>Modelo SLIM</h3>
+                        <div class="modelo-info">
+                            <p><strong>Quiosque Compacto</strong></p>
+                            <p>Focado em café e snacks. Ideal para recepções e lounges.</p>
+                        </div>
+                    </div>
+                    <div class="modelo-card" onclick="alterarModelo('middle', this)">
+                        <h3>Modelo MIDDLE</h3>
+                        <div class="modelo-info">
+                            <p><strong>Micro-mercado de Contêiner</strong></p>
+                            <p>Design modular e robusto, perfeito para áreas externas e parques.</p>
+                        </div>
+                    </div>
+                    <div class="modelo-card ativo" onclick="alterarModelo('full', this)">
+                        <h3>Modelo FULL</h3>
+                        <div class="modelo-info">
+                            <p><strong>Mercado Autônomo Completo</strong></p>
+                            <p>Variedade premium com checkout automatizado e corredor completo.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="modelo-card" onclick="alterarModelo('middle', this)">
-                    <h3>Modelo MIDDLE</h3>
-                    <div class="modelo-info">
-                        <p><strong>Micro-mercado de Contêiner</strong></p>
-                        <p>Design modular e robusto, perfeito para áreas externas e parques.</p>
+                <div class="detalhe-modelo-wrapper" id="exibicao-modelo">
+                    <div class="detalhe-imagem">
+                        <img id="imagem-modelo" src="assets/bannerefull.png" alt="Modelo de Mercado">
                     </div>
-                </div>
-
-                <div class="modelo-card ativo" onclick="alterarModelo('full', this)">
-                    <h3>Modelo FULL</h3>
-                    <div class="modelo-info">
-                        <p><strong>Mercado Autônomo Completo</strong></p>
-                        <p>Variedade premium com checkout automatizado e corredor completo.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="detalhe-modelo-wrapper" id="exibicao-modelo">
-                <div class="detalhe-imagem">
-                    <img id="imagem-modelo" src="assets/bannerefull.png" alt="Modelo de Mercado">
-                </div>
-                <div class="detalhe-texto">
-                    <h3 id="titulo-modelo">Modelo FULL</h3>
-                    <div id="descricao-modelo" class="descricao-box">
+                    <div class="detalhe-texto">
+                        <h3 id="titulo-modelo">Modelo FULL</h3>
+                        <div id="descricao-modelo" class="descricao-box"></div>
                     </div>
                 </div>
             </div>
@@ -140,136 +145,141 @@
 
     <section id="unidades" class="section unidades">
         <div class="container">
-            <h2>Onde Estamos</h2>
-            <p class="subtitulo-unidades">Já estamos presentes em pontos estratégicos, levando agilidade para diversos
-                condomínios.</p>
-
-            <div class="unidades-wrapper">
-                <div class="unidades-lista">
-                    <div class="unidade-item unidade-ativa"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7312.103438449836!2d-46.668266904345856!3d-23.60247803374143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a05fb4da5e7%3A0x3ea9f8e5b1375eae!2sInternational%20Duplex%20Residence!5e0!3m2!1spt-BR!2sbr!4v1776791438985!5m2!1spt-BR!2sbr', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Moema</h4>
-                            <p>São Paulo - SP</p>
+            <h2 class="titulo-mobile-accordion" onclick="toggleAccordion('conteudo-unidades', this)">Onde Estamos</h2>
+            <div id="conteudo-unidades" class="conteudo-accordion">
+                <p class="subtitulo-unidades">Já estamos presentes em pontos estratégicos, levando agilidade para
+                    diversos condomínios.</p>
+                <div class="unidades-wrapper">
+                    <div class="unidades-lista" id="lista-bairros">
+                        <div class="unidade-item unidade-ativa"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7312.103438449836!2d-46.668266904345856!3d-23.60247803374143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a05fb4da5e7%3A0x3ea9f8e5b1375eae!2sInternational%20Duplex%20Residence!5e0!3m2!1spt-BR!2sbr!4v1776791438985!5m2!1spt-BR!2sbr', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Moema</h4>
+                                <p>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="unidade-item"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4337.066346937816!2d-46.632533223913406!3d-23.59445156281015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bd29dda3edd%3A0xdb7bf8695acdc982!2sTerra%20Vitris!5e1!3m2!1spt-BR!2sbr!4v1776790764429!5m2!1spt-BR!2sbr', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Chácara Klabin</h4>
+                                <p>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="unidade-item destaque-unidade"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.410335996567!2d-46.61749441412949!3d-23.44565880287893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef7716d35caed%3A0xc3ec0dfb290ad2a8!2sR.%20Cap.%20Jos%C3%A9%20Aguirre%20Camargo%2C%20109%20-%20Vila%20Albertina%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002357-120!5e0!3m2!1spt-BR!2sbr!4v1776791224833!5m2!1spt-BR!2sbr', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Cantareira (2 Unidades)</h4>
+                                <p>Operações frente a frente</p>
+                            </div>
+                        </div>
+                        <div class="unidade-item"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4339.346027931837!2d-46.706202423915414!3d-23.52540476027369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef87b69d7c3ad%3A0x5a3f78fed249dce5!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Residenziale%20Montecatini!5e1!3m2!1spt-BR!2sbr!4v1776790719232!5m2!1spt-BR!2sbr', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Vila Mariana</h4>
+                                <p>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="unidade-item"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!4v1776791382511!6m8!1m7!1s051gJ-U9m_v3wyNwpjHFyw!2m2!1d-23.6529580397638!2d-46.6750005424778!3f97.70272976482599!4f-21.828106604775513!5f0.7820865974627469', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Congonhas</h4>
+                                <p>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="unidade-item"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!3m2!1spt-BR!2sbr!4v1776791618934!5m2!1spt-BR!2sbr!6m8!1m7!1sLlGISUTJaPiQYdytzQ0kcA!2m2!1d-22.86052423054974!2d-48.43630507676186!3f75.77788575677043!4f-1.8427662297797838!5f0.7820865974627469', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Botucatu</h4>
+                                <p>Interior - SP</p>
+                            </div>
+                        </div>
+                        <div class="unidade-item"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4338.866521964287!2d-46.527957123915144!3d-23.539943860807192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5f9443f61cc3%3A0x18d7f8f0ee424da9!2sResidencial%20Herc%C3%ADlia!5e1!3m2!1spt-BR!2sbr!4v1776790813717!5m2!1spt-BR!2sbr', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Vila Matilde</h4>
+                                <p>Zona Leste - SP</p>
+                            </div>
+                        </div>
+                        <div class="unidade-item"
+                            onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d138818.70801330087!2d-46.824402902734384!3d-23.5636336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef633e4daf067%3A0xb50fb482d50c22a6!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Bianca!5e1!3m2!1spt-BR!2sbr!4v1776790909779!5m2!1spt-BR!2sbr', this)">
+                            <span class="pin">📍</span>
+                            <div>
+                                <h4>Chora Menino</h4>
+                                <p>Zona Norte - SP</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="unidade-item"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4337.066346937816!2d-46.632533223913406!3d-23.59445156281015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bd29dda3edd%3A0xdb7bf8695acdc982!2sTerra%20Vitris!5e1!3m2!1spt-BR!2sbr!4v1776790764429!5m2!1spt-BR!2sbr', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Chácara Klabin</h4>
-                            <p>São Paulo - SP</p>
-                        </div>
+                    <div class="unidades-mapa">
+                        <iframe id="mapa-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7312.103438449836!2d-46.668266904345856!3d-23.60247803374143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a05fb4da5e7%3A0x3ea9f8e5b1375eae!2sInternational%20Duplex%20Residence!5e0!3m2!1spt-BR!2sbr!4v1776791438985!5m2!1spt-BR!2sbr"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="unidade-item destaque-unidade"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.410335996567!2d-46.61749441412949!3d-23.44565880287893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef7716d35caed%3A0xc3ec0dfb290ad2a8!2sR.%20Cap.%20Jos%C3%A9%20Aguirre%20Camargo%2C%20109%20-%20Vila%20Albertina%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002357-120!5e0!3m2!1spt-BR!2sbr!4v1776791224833!5m2!1spt-BR!2sbr', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Cantareira (2 Unidades)</h4>
-                            <p>Operações frente a frente</p>
-                        </div>
-                    </div>
-                    <div class="unidade-item"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4339.346027931837!2d-46.706202423915414!3d-23.52540476027369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef87b69d7c3ad%3A0x5a3f78fed249dce5!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Residenziale%20Montecatini!5e1!3m2!1spt-BR!2sbr!4v1776790719232!5m2!1spt-BR!2sbr', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Vila Mariana</h4>
-                            <p>São Paulo - SP</p>
-                        </div>
-                    </div>
-                    <div class="unidade-item"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!4v1776791382511!6m8!1m7!1s051gJ-U9m_v3wyNwpjHFyw!2m2!1d-23.6529580397638!2d-46.6750005424778!3f97.70272976482599!4f-21.828106604775513!5f0.7820865974627469', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Congonhas</h4>
-                            <p>São Paulo - SP</p>
-                        </div>
-                    </div>
-                    <div class="unidade-item"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!3m2!1spt-BR!2sbr!4v1776791618934!5m2!1spt-BR!2sbr!6m8!1m7!1sLlGISUTJaPiQYdytzQ0kcA!2m2!1d-22.86052423054974!2d-48.43630507676186!3f75.77788575677043!4f-1.8427662297797838!5f0.7820865974627469', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Botucatu</h4>
-                            <p>Interior - SP</p>
-                        </div>
-                    </div>
-                    <div class="unidade-item"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4338.866521964287!2d-46.527957123915144!3d-23.539943860807192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5f9443f61cc3%3A0x18d7f8f0ee424da9!2sResidencial%20Herc%C3%ADlia!5e1!3m2!1spt-BR!2sbr!4v1776790813717!5m2!1spt-BR!2sbr', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Vila Matilde</h4>
-                            <p>Zona Leste - SP</p>
-                        </div>
-                    </div>
-                    <div class="unidade-item"
-                        onclick="alterarMapa('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d138818.70801330087!2d-46.824402902734384!3d-23.5636336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef633e4daf067%3A0xb50fb482d50c22a6!2sCondom%C3%ADnio%20Edif%C3%ADcio%20Bianca!5e1!3m2!1spt-BR!2sbr!4v1776790909779!5m2!1spt-BR!2sbr', this)">
-                        <span class="pin">📍</span>
-                        <div>
-                            <h4>Chora Menino</h4>
-                            <p>Zona Norte - SP</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="unidades-mapa">
-                    <iframe id="mapa-iframe"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7312.103438449836!2d-46.668266904345856!3d-23.60247803374143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a05fb4da5e7%3A0x3ea9f8e5b1375eae!2sInternational%20Duplex%20Residence!5e0!3m2!1spt-BR!2sbr!4v1776791438985!5m2!1spt-BR!2sbr"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contato" class="section contato">
-        <div class="container contato-wrapper">
-            <div class="contato-info">
-                <h2>Fale Conosco</h2>
-                <p>Nossa equipe está pronta para tirar suas dúvidas e encontrar a melhor solução para você.</p>
-
-                <div class="representantes">
-                    <h3>Nossos Representantes</h3>
-                    <div class="representante">
-                        <p><strong>Sergio Giammusso</strong></p>
-                        <p>sergiogiammusso@agilit.com.br</p>
-                        <p>(11) 99999-9999</p>
+        <div class="container">
+            <h2 class="titulo-mobile-accordion titulo-contato" onclick="toggleAccordion('conteudo-contato', this)">Fale
+                Conosco</h2>
+            <div id="conteudo-contato" class="conteudo-accordion contato-wrapper">
+                <div class="contato-info">
+                    <p>Nossa equipe está pronta para tirar suas dúvidas e encontrar a melhor solução para você.</p>
+                    <div class="representantes">
+                        <h3>Nossos Representantes</h3>
+                        <div class="representante">
+                            <p><strong>Sergio Giammusso</strong></p>
+                            <p>sergiogiammusso@agilit.com.br</p>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                        <div class="representante">
+                            <p><strong>Fernando Ribeiro</strong></p>
+                            <p>fernandoribeiro@agilit.com</p>
+                            <p>(11) 99999-9999</p>
+                        </div>
                     </div>
-                    <div class="representante">
-                        <p><strong>Fernando Ribeiro</strong></p>
-                        <p>fernandoribeiro@agilit.com</p>
-                        <p>(11) 99999-9999</p>
+                    <div class="contato-principal">
+                        <h3>Contato Geral</h3>
+                        <p>Telefone: (11) 3000-0000</p>
+                        <p>E-mail: contato@agilit.com</p>
                     </div>
                 </div>
+                <div class="contato-formulario">
+                    <form id="contato-form" action="https://formsubmit.co/klebersantos1289@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Novo contato pelo site Agilit Market!">
 
-                <div class="contato-principal">
-                    <h3>Contato Geral</h3>
-                    <p>Telefone: (11) 3000-0000</p>
-                    <p>E-mail: contato@agilit.com</p>
+                        <div class="form-group">
+                            <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Seu E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" rows="5"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-principal form-btn" id="btn-enviar">ENVIAR AGORA</button>
+
+                        <div id="form-feedback"
+                            style="margin-top: 15px; display: none; font-weight: bold; color: var(--primary-green);">
+                            Mensagem enviada com sucesso! Redirecionando...
+                        </div>
+                    </form>
                 </div>
-            </div>
-
-            <div class="contato-formulario">
-                <form action="https://formsubmit.co/klebersantos1289@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Novo contato pelo site Agilit Market!">
-                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
-
-                    <div class="form-group">
-                        <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Seu E-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-principal form-btn">ENVIAR AGORA</button>
-                </form>
             </div>
         </div>
     </section>
@@ -277,16 +287,15 @@
     <footer>
         <div class="container footer-wrapper">
             <div class="footer-column footer-logo-box">
-                <div class="footer-logo">
+                <a href="#inicio" class="footer-logo" style="text-decoration: none;">
                     <img src="assets/logo_transparent.png" alt="Logotipo Agilit Market">
                     <span class="logo-text">AGILIT <strong>MARKET</strong></span>
-                </div>
+                </a>
                 <div class="footer-sub-links">
-                    <a href="termos.html" target="_blank">Termos de Uso</a>
-                    <a href="termos.html#privacidade" target="_blank">Política de Privacidade</a>
+                    <a href="termos/" target="_blank">Termos de Uso</a>
+                    <a href="politica/" target="_blank">Política de Privacidade</a>
                 </div>
             </div>
-
             <div class="footer-column footer-nav">
                 <h3 class="texto-degrade">Navegação Rápida</h3>
                 <ul>
@@ -296,7 +305,6 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
-
             <div class="footer-column footer-legal">
                 <h3 class="texto-degrade">Agilit Market © 2026</h3>
                 <p><strong>Razão Social:</strong> Agilit Market Soluções em Varejo LTDA</p>
@@ -307,11 +315,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a Agilit Market para o meu condomínio."
         class="whatsapp-btn" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Fale conosco pelo WhatsApp">
     </a>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
