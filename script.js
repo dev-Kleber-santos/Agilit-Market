@@ -98,7 +98,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // --- Formulário AJAX ---
 if (contatoForm) {
-    contatoForm.addEventListener('submit', function(e) {
+    contatoForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         btnEnviar.innerText = "ENVIANDO...";
@@ -110,27 +110,56 @@ if (contatoForm) {
             body: new FormData(this),
             headers: { 'Accept': 'application/json' }
         })
-        .then(response => {
-            if (response.ok) {
-                feedback.style.display = 'block';
-                contatoForm.reset();
-                setTimeout(() => {
-                    window.location.href = "#inicio";
-                    feedback.style.display = 'none';
+            .then(response => {
+                if (response.ok) {
+                    feedback.style.display = 'block';
+                    contatoForm.reset();
+                    setTimeout(() => {
+                        window.location.href = "#inicio";
+                        feedback.style.display = 'none';
+                        btnEnviar.innerText = "ENVIAR AGORA";
+                        btnEnviar.style.opacity = "1";
+                        btnEnviar.disabled = false;
+                    }, 3000);
+                } else {
+                    alert("Ops! Ocorreu um erro. Tente novamente.");
                     btnEnviar.innerText = "ENVIAR AGORA";
-                    btnEnviar.style.opacity = "1";
                     btnEnviar.disabled = false;
-                }, 3000);
-            } else {
-                alert("Ops! Ocorreu um erro. Tente novamente.");
+                }
+            })
+            .catch(() => {
+                alert("Erro de conexão. Verifique sua internet.");
                 btnEnviar.innerText = "ENVIAR AGORA";
                 btnEnviar.disabled = false;
-            }
-        })
-        .catch(() => {
-            alert("Erro de conexão. Verifique sua internet.");
-            btnEnviar.innerText = "ENVIAR AGORA";
-            btnEnviar.disabled = false;
-        });
+            });
     });
 }
+
+// --- Função Simples do FAQ ---
+function toggleFaq(elemento) {
+    const faqItem = elemento.parentElement;
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) item.classList.remove('ativo');
+    });
+
+    faqItem.classList.toggle('ativo');
+}
+
+// --- Lógica de Revelar ao Rolar ---
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visivel');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.section, .card-compacto, .modelo-card, .faq-item').forEach(el => {
+    el.classList.add('revelar');
+    observer.observe(el);
+});
