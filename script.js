@@ -13,22 +13,43 @@ function alterarModelo(tipo, elemento) {
 
     const modelos = {
         slim: {
-            img: 'assets/slim.png', title: 'Modelo SLIM',
-            desc: `<p>Ideal para condomínios com espaço reduzido. De 20 até 60 unidades. Com 1 gôndola e 1 geladeira expositora, oferece produtos essenciais em uma área de 2 a 3m².</p>
-            <ul><li><strong>R$ 3.000</strong> - Totem / Sistema de Automação</li><li><strong>R$ 400</strong> - 1 Gôndola Amadeirada</li><li><strong>R$ 3.000 a R$ 6.000</strong> - 1 Geladeira Expositora</li></ul>
-            <div class="valores-destaque"><p style="color: var(--primary-blue);"><strong>Investimento:</strong> R$ 11.900 a R$ 14.900</p></div>`
+            img: 'assets/slim.png',
+            title: 'Modelo SLIM',
+            desc: `<p>Ideal para espaços compactos, oferecendo o essencial com agilidade. Equipado com <strong>1 geladeira expositora</strong> e <strong>1 gôndola</strong>, focado em bebidas geladas (água, refrigerantes, energéticos e cervejas) e um mix variado de snacks, chocolates, biscoitos, além de itens básicos de mercearia, higiene e limpeza.</p>
+        <ul>
+            <li><strong>Bebidas:</strong> Água, refri, sucos, energéticos e cervejas.</li>
+            <li><strong>Snacks:</strong> Chocolates, balas, chicletes e biscoitos.</li>
+            <li><strong>Essenciais:</strong> Itens de mercearia, higiene e limpeza.</li>
+        </ul>
+        <div class="valores-destaque">
+            <p style="color: var(--primary-blue);"><strong>Estrutura:</strong> 1 Geladeira + 1 Gôndola</p>
+        </div>`
         },
         middle: {
-            img: 'assets/middle.png', title: 'Modelo MIDDLE',
-            desc: `<p>O modelo mais popular. De 60 até 120 unidades. Com 3 gôndolas e 2 expositores frios em uma área de 4 a 8m², oferece um mix completo de produtos.</p>
-            <ul><li><strong>R$ 3.000</strong> - Totem / Sistema de Automação</li><li><strong>R$ 1.200</strong> - 3 Gôndolas Amadeiradas</li><li><strong>R$ 6.000 a R$ 12.000</strong> - 2 Geladeiras Expositoras</li></ul>
-            <div class="valores-destaque"><p style="color: var(--primary-blue);"><strong>Investimento:</strong> R$ 18.200 a R$ 24.200</p></div>`
+            img: 'assets/middle.png',
+            title: 'Modelo MIDDLE',
+            desc: `<p>Nosso modelo intermediário, oferecendo maior variedade e volume de estoque. Com <strong>2 geladeiras expositoras</strong> e <strong>3 gôndolas</strong>, permite um mix mais robusto de bebidas e uma seção de mercearia e limpeza muito mais completa para o dia a dia dos moradores.</p>
+        <ul>
+            <li><strong>Bebidas:</strong> Dobro de capacidade para gelados.</li>
+            <li><strong>Mercearia:</strong> Mix ampliado de produtos secos e mantimentos.</li>
+            <li><strong>Limpeza:</strong> Seção dedicada a produtos de higiene e cuidados com a casa.</li>
+        </ul>
+        <div class="valores-destaque">
+            <p style="color: var(--primary-blue);"><strong>Estrutura:</strong> 2 Geladeiras + 3 Gôndolas</p>
+        </div>`
         },
         full: {
-            img: 'assets/bannerefull.png', title: 'Modelo FULL',
-            desc: `<p>A solução completa a partir de 120 unidades. Com 5 gôndolas e 3 expositores frios em mais de 15m², proporciona experiência similar a um mercado tradicional.</p>
-            <ul><li><strong>R$ 3.000</strong> - Totem / Sistema de Automação</li><li><strong>R$ 2.400</strong> - 6 Gôndolas Amadeiradas</li><li><strong>R$ 9.000 a R$ 18.000</strong> - 3 Expositores Frios</li></ul>
-            <div class="valores-destaque"><p style="color: var(--primary-blue);"><strong>Investimento:</strong> R$ 25.900 a R$ 34.900</p></div>`
+            img: 'assets/bannerefull.png',
+            title: 'Modelo FULL',
+            desc: `<p>A experiência completa de um mercado autônomo. Pode ser montado em container ou espaço físico, contando com <strong>2 geladeiras, 2 freezers</strong> e <strong>5 gôndolas</strong>. Além da enorme variedade de produtos, inclui mesas e cadeiras, criando um ambiente de lounge para conveniência e convivência.</p>
+        <ul>
+            <li><strong>Completo:</strong> Seção de congelados (freezers) e resfriados.</li>
+            <li><strong>Lounge:</strong> Espaço com mesas e cadeiras para maior conforto.</li>
+            <li><strong>Variedade:</strong> O maior mix de produtos da categoria.</li>
+        </ul>
+        <div class="valores-destaque">
+            <p style="color: var(--primary-blue);"><strong>Estrutura:</strong> Container/Físico + 2 Geladeiras + 2 Freezers + 5 Gôndolas</p>
+        </div>`
         }
     };
 
